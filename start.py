@@ -40,16 +40,13 @@ class filter_nodes:
             if label_name in labels and labels[label_name] == label_value:
                 matching_nodes.append(node_name)
             return matching_nodes
+        
+class scheduler:
 
-class user_input:
+##use the matching_nodes list to select a node for the pod to be scheduled on and return the node name
 
-      def yaml_input(yaml_file):
-          with open(yaml_file) as f:
-              dep = yaml.safe_load(f)
-          return dep
-
-
-
-
-
-
+     def schedule(self, matching_nodes):
+            for matching_node in matching_nodes:
+                
+                print("Scheduling pod on node %s" % matching_node)
+                return matching_node
